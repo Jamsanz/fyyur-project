@@ -1,5 +1,6 @@
 import os
 SECRET_KEY = os.urandom(32)
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 # Grabs the folder where the script runs.
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -10,4 +11,4 @@ DEBUG = True
 
 
 # TODO IMPLEMENT DATABASE URL
-SQLALCHEMY_DATABASE_URI = '<Put your local database url>'
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:7909@localhost:5432/fyyur'
