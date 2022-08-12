@@ -72,7 +72,18 @@
 	</div>
 </section>
 
-<a href="/artists/{{ artist.id }}/edit"><button class="btn btn-primary btn-lg">Edit</button></a>
-
+<a href="/artists/{{ artist.id }}/edit"><button class="btn btn-primary btn-lg">Edit <i class="fas fa-edit ml-2 text-white"></i></button></a>
+<span onclick="deleteArtist('{{artist.id}}')" class="btn btn-danger btn-lg ">Delete <i class="ml-2 fas fa-trash text-white"></i></span>
+<script>
+	function deleteArtist(id) {
+		fetch(`/artists/${id}`, {
+			method: 'DELETE'
+		}).catch((err) => {
+			alert('Oops! Something went wrong')
+		}).finally(() => {
+			window.location.href = '/'
+		})
+	}
+</script>
 {% endblock %}
 

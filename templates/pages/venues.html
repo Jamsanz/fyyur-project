@@ -5,15 +5,17 @@
 <h3>{{ area.city }}, {{ area.state }}</h3>
 	<ul class="items">
 		{% for venue in area.venues %}
-		<li>
-			<a href="/venues/{{ venue.id }}">
+		<li style="display: flex; align-items: center;">
+			<a href="/venues/{{ venue.id }}" style="width: 200px; max-width: 100%;">
 				<i class="fas fa-music"></i>
 				<div class="item">
 					<h5>{{ venue.name }}</h5>
 				</div>
 			</a>
+			<!-- <i class="fas fa-trash text-danger"></i> -->
 		</li>
 		{% endfor %}
 	</ul>
 {% endfor %}
+
 {% endblock %}
