@@ -15,3 +15,12 @@ class Artist(db.Model):
   seeking_venue = db.Column(db.Boolean, nullable=False, default=False)
   seeking_description = db.Column(db.String(500), nullable=True)
   shows = db.relationship('Show', backref='artist', lazy=True)
+
+  def getAllArtists(self):
+   return self.query.with_entities(self.id, self.name).all()
+
+  def searchArtist(self, search_term):
+    return self.query.filter(Artist.name.ilike(f"%{search_term}%")).all()
+
+  def getArtistById(self, artist_id):
+    return self.query.filter(Artist.id==artist_id).first()
