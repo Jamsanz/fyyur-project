@@ -75,8 +75,10 @@
 	</div>
 </section>
 
-<a href="/venues/{{ venue.id }}/edit"><button class="btn btn-primary btn-lg">Edit <i class="fas fa-edit ml-2 text-white"></i></button></a>
-<span onclick="deleteVenue('{{venue.id}}')" class="btn btn-danger btn-lg ">Delete <i class="ml-2 fas fa-trash text-white"></i></span>
+<a href="/venues/{{ venue.id }}/edit"><button class="btn btn-primary btn-lg">Edit <i
+			class="fas fa-edit ml-2 text-white"></i></button></a>
+<span onclick="deleteVenue('{{venue.id}}')" class="btn btn-danger btn-lg ">Delete <i
+		class="ml-2 fas fa-trash text-white"></i></span>
 <script>
 	function deleteVenue(id) {
 		fetch(`/venues/${id}`, {
@@ -89,4 +91,3 @@
 	}
 </script>
 {% endblock %}
-
